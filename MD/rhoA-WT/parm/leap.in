@@ -1,0 +1,25 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+loadamberparams frcmod.ionsjc_tip3p
+
+###load frcmod of NSR
+loadamberparams ../../../Parameters/gdp.frcmod
+
+###load prepi files 
+loadamberprep ../../../Parameters/gdp.prep
+
+mol = loadpdb pre_RhoA.pdb
+
+#set default PBradii mbondi2
+alignaxes mol
+#center mol
+charge mol
+addions mol Na+ 8
+solvatebox mol TIP3PBOX 12 iso
+addIonsRand mol Na+ 71
+addIonsRand mol Cl- 71
+savepdb mol RhoA_wt_wat.pdb
+
+saveamberparm mol RhoA_wt_wat.parm7 RhoA_wt_wat.rst7
+
+quit
