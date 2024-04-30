@@ -1,0 +1,10 @@
+l minimization
+&cntrl
+  imin   = 1,
+  maxcyc = 80000,
+  ncyc   = 20000,
+  ntb    = 1,
+  cut    = 13,
+  drms   = 0.0002
+/
+
