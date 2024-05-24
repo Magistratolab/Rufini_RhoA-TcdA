@@ -14,10 +14,10 @@ module load openmpi/4.1.4--gcc--11.3.0-cuda-11.8
 module load  cuda/11.8
 module load amber/2022
 
-INPUT=h_nvt1
+INPUT=$1
 REF=../parm/RhoA_wt_wat
-PREV=../min/04_min
-OUTPUT=01_nvt
+PREV=$2
+OUTPUT=$3
 #rstrt=../mn_mg_coord
 
 
