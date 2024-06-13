@@ -1,0 +1,30 @@
+source leaprc.protein.ff14SB
+source leaprc.water.tip3p
+source leaprc.GLYCAM_06j-1
+loadamberparams frcmod.ionsjc_tip3p
+
+###load frcmod of NSR
+loadamberparams /net/sbp/tetinas/salunnor/tcdA/parm/original_parm/gdp.frcmod
+
+###load prepi files 
+loadamberprep /net/sbp/tetinas/salunnor/tcdA/parm/original_parm/gdp.prep
+loadOff GLYCAM_amino_06j_12SB.lib
+loadOff GLYCAM_aminoct_06j_12SB.lib
+loadOff GLYCAM_aminont_06j_12SB.lib
+
+
+mol = loadpdb pre_RhoA_GDP_glu.pdb
+bond mol.37.OG1 mol.184.C1
+
+#set default PBradii mbondi2
+alignaxes mol
+charge mol
+addions mol Na+ 8
+solvatebox mol TIP3PBOX 12 iso
+addIonsRand mol Na+ 87
+addIonsRand mol Cl- 87
+savepdb mol RhoA_GDP_glu.pdb
+
+saveamberparm mol RhoA_GDP_glu.parm7 RhoA_GDP_glu.rst7
+
+quit
