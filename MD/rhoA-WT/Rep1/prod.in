@@ -24,5 +24,4 @@ production prod for 100 ns no restraint
   TYPE = 'DUMPFREQ', ISTEP1 = 100,
  /
  &wt TYPE = 'END' /
- DUMPAVE=traj_biais
 
