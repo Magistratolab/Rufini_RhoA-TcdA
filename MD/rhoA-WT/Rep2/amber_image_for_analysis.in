@@ -1,0 +1,19 @@
+#script to merge and center trajecotires. The output trajectory can be downloaded from  zenodo: link:
+
+parm        ../../../parm/RhoA_wt_wat.parm7
+trajin      1_prod.nc 1 last 4
+trajin      2_prod.nc 1 last 4
+trajin      3_prod.nc 1 last 4
+trajin      4_prod.nc 1 last 4
+trajin      5_prod.nc 1 last 4
+trajin      6_prod.nc 1 last 4
+trajin      7_prod.nc 1 last 4
+trajin      8_prod.nc 1 last 4
+trajin      9_prod.nc 1 last 4
+trajin      10_prod.nc 1 last 4
+trajin      11_prod.nc 1 last 4
+trajin      12_prod.nc 1 last 4
+center      :1-181
+autoimage
+trajout     prod_for_analysis.nc netcdf
+run
